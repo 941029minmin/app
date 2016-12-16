@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/iscroll.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
      <link rel="stylesheet" href="css/swiper.css">
+     <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
       <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
         <script src="js/swiper.animate1.0.2.min .js"></script>
     <script src="js/swiper.min.js"></script>
@@ -19,22 +20,6 @@
 		        pagination : '.swiper-pagination',//轮播点
 		        paginationHide :true,
 		    });
-		     var tabsSwiper = new Swiper('#tabs-container',{
-    		speed:500,
-    		onSlideChangeStart: function(){
-      			$(".tabs .active").removeClass('active')
-      			$(".tabs a").eq(tabsSwiper.activeIndex).addClass('active')  
-    }
-  })
- 		 $(".tabs a").on('touchstart mousedown',function(e){
-   			 e.preventDefault()
-   			 $(".tabs .active").removeClass('active')
-   			 $(this).addClass('active')
-			 tabsSwiper.slideTo( $(this).index() )
- 		 })
- 		 $(".tabs a").click(function(e){
-   			 e.preventDefault()
-  		})
             myScroll = new IScroll('#wrapper', {
                 bounceEasing: 'elastic',
                 bounceTime: 1200 ,
@@ -44,89 +29,31 @@
         }
 
         document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
     </script>
-
-    <style type="text/css">
-      
-        #header {
-            position: absolute;
-            z-index: 2;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0.8rem;
-            line-height: 0.8rem;
-            background: #741FA5;
-            padding: 0;
-            color: #eee;
-            font-size: 20px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-       
-
-        #wrapper {
-            position: absolute;
-            z-index: 1;
-            top: 0.8rem;
-            bottom: 0.48rem;
-            left: 0;
-            width: 100%;
-            background: #131212;
-            overflow: hidden;
-        }
-
-        #scroller {
-            position: absolute;
-            z-index: 1;
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            width: 100%;
-            padding-bottom: 1rem; 
-            box-sizing: border-box;
-            -webkit-transform: translateZ(0);
-            -moz-transform: translateZ(0);
-            -ms-transform: translateZ(0);
-            -o-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-text-size-adjust: none;
-            -moz-text-size-adjust: none;
-            -ms-text-size-adjust: none;
-            -o-text-size-adjust: none;
-            text-size-adjust: none;
-        }
-        .up,.down{
-            width: 100%;height: 44px;
-            background: #ccc;
-            text-align: center;
-            line-height: 44px;
-            display: none;
-        }
-
-    </style>
 </head>
 <body onload="loaded()">
-<div id="header">iScroll</div>
+<div id="header">
+	<ul>
+		<li class="iconfont menu"><a href="bofang.html" style="color: #fff;">&#xe607;</a></li>
+		<li class="logo"></li>
+		<li class="iconfont search"><a href="" style="color: #fff;">&#xe600;</a></li>
+	</ul>
+</div>
 
 <div id="wrapper">
     <div id="scroller">
     	<!--导航-->
-        <ul class="lis">
-		    <li class="actives"><a href="">首页</a></li>
-		    <li><a href="">乐库</a></li>
-		    <li><a href="">推荐</a></li>
-		    <li><a href="">最近</a></li>
+         <ul class="lis">
+		    <li class="actives"><a href="index.html">首页</a></li>
+		    <li class=""><a href="yueku.html">乐库</a></li>
+		    <li class=""><a href="tuijian.html">推荐</a></li>
+		    <li class=""><a href="zuijin.html">最近</a></li>
 		</ul>
+		<div id="all">
 		<!--banner-->
 		<div class="content">
-		    <div class="swiper-container">
-		        <div class="swiper-wrapper">
+		    <div class="swiper-container" >
+		        <div class="swiper-wrapper"">
 		            <div class="swiper-slide " >
 		                <a href="content.html"><img src="img/2.jpg"/></a>
 		            </div>
@@ -180,23 +107,9 @@
 			</div>
 		</div>
 		<!--个性化-->
-		<div class="new">
-			<div>
-				<div class="title"><img src="img/in.png" alt="" /></div>
-				<div class="gxh">
-					<div class="gxh-con">
-						<div class="gxh-le"></div>
-						<div class="gxh-ri"></div>
-					</div>
-				</div>
-				<div class="gxh">
-					<img src="img/zt2.jpg" alt="" />
-				</div>
-				<div class="gxh">
-					<img src="img/zt3.jpg" alt="" />
-				</div>
-			</div>
+		
 		</div>
+
     </div>
 </div>
 
@@ -205,7 +118,11 @@
 		<div class="dian"></div>
 	</div>
 	<div class="fo-left"></div>
+	<div class="fo-right">
+		<div class="iconfont">&#xe644;</div>
+		<div class="iconfont stop">&#xe783;</div>
+		<div class="iconfont">&#xe606;</div>
+	</div>
 </div>
-
 </body>
 </html>
